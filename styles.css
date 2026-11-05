@@ -1965,3 +1965,8 @@ body.wd2 { background: var(--cream); }
   .rail-wrap { padding-bottom: 66px; }
   .rail-hint { bottom: 8px; }
 }
+
+/* Wildreamers sign-up (2nd pass): the wrapper itself had min-height 700px, and GHL's script can set its own inline height, so force both */
+.booking-embed.booking-embed--signup { min-height: 0; padding: 8px 8px 4px; align-self: start; }
+.booking-embed--signup iframe { min-height: 0 !important; height: 540px !important; }
+@media (max-width: 800px) { .booking-embed--signup iframe { height: 560px !important; } }
