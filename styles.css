@@ -1882,3 +1882,65 @@ body.wd2 { background: var(--cream); }
 /* keep the watercolor at the size it had in the 920px hero, so the blooms don't grow when the hero shrinks */
 .hero { background-size: auto 920px; background-position: center 45%; }
 @media (min-width: 1700px) { .hero { background-size: cover; } }
+
+/* 2026-11-04 (late): 404 page spacing */
+.page-hero--404 { padding-top: 110px; padding-bottom: 140px; }
+.page-hero--404 .lead { max-width: 620px; margin-left: auto; margin-right: auto; }
+.page-hero--404 .nf-actions { margin: 34px 0 26px; }
+.page-hero--404 .nf-note { display: block; font-size: 16px; color: #4a4a44; }
+.page-hero--404 .nf-note a { color: var(--black); font-weight: 600; }
+
+/* ======== 2026-11-05: mobile fixes (phone test) ======== */
+/* Hero: the watercolor's flowers sit on the far left/right edges, so a phone crop of the middle showed none.
+   Pin the left bouquet to the bottom-left and the right blooms to the top-right instead. Icons become a tidy row above the bouquet. */
+@media (max-width: 800px) {
+  .hero { min-height: 0; background-color: #fefcfb;
+    background-image: url("assets/hero-watercolor.webp"), url("assets/hero-watercolor.webp");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 440px, auto 440px;
+    background-position: left bottom, right top; }
+  .hero .wrap { order: 1; padding-top: 150px; padding-bottom: 36px; }
+  .hero__floats { order: 2; position: static; inset: auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 22px; padding: 0 24px 200px; }
+  .hero__floats .hf-pos { position: static !important; display: block !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; --s: 62px !important; }
+}
+/* Packages on the homepage: Simple, Standard, Premium in order on phones (was Standard first) */
+@media (max-width: 1000px) { .tier--featured { order: 0; } }
+
+/* More from Wildsite on phones: image sits under the text and fades up into the box color, so each card reads as one piece */
+@media (max-width: 600px) {
+  .fb { position: relative; overflow: hidden; }
+  .fb__text { max-width: none !important; padding: 30px 26px 150px; }
+  .fb img { position: absolute !important; left: 0; right: 0; bottom: 0; top: auto; width: 100%; height: 210px; object-fit: cover; z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 55%); mask-image: linear-gradient(to bottom, transparent 0%, #000 55%); }
+  .feature-band + .feature-band { margin-top: 0; }
+  .feature-band { margin-bottom: 0; }
+}
+
+/* Footer on phones: one column (a later 3-column rule was overriding the mobile one and pushing Contact off-screen) */
+@media (max-width: 700px) {
+  .site-footer .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .footer__brand .socials { margin-top: 28px; }
+  .copyright { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* ======== 2026-11-05: blog subscribe = plain form (Substack's embed repeated the description and got cut off on phones) ======== */
+.subscribe__form { text-align: left; }
+.subscribe__label { display: block; font-size: 16px; font-weight: 600; margin: 0 0 8px; }
+.subscribe__row { display: flex; gap: 10px; }
+.subscribe__row input { flex: 1 1 auto; min-width: 0; font: inherit; font-size: 17px; padding: 14px 16px; border: 1px solid #d9d2c5; border-radius: 999px; background: var(--white); color: var(--black); }
+.subscribe__row input:focus { outline: 2px solid var(--orange); outline-offset: 1px; }
+.subscribe__row .btn { flex: 0 0 auto; border: 0; cursor: pointer; }
+.subscribe__fine { font-size: 15px; color: #4a4a44; margin: 12px 0 0; max-width: none; }
+.subscribe__fine a { color: inherit; }
+@media (max-width: 900px) { .subscribe__box { grid-template-columns: minmax(0, 1fr); padding: 34px 26px; } }
+@media (max-width: 480px) { .subscribe__row { flex-direction: column; } .subscribe__row .btn { width: 100%; } }
+
+/* Wildreamers on phones: the 2-column stats rule (higher specificity) beat the 1-column mobile rule, and the 1fr track grew to fit it, pushing the sign-up card off-screen */
+.wd2-when__grid { grid-template-columns: minmax(0, 1fr) 440px; }
+.wd2-when__left { min-width: 0; }
+@media (max-width: 1000px) { .wd2-when__grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) {
+  .wd2-when__grid .wd2-stats { grid-template-columns: 1fr; }
+  .wd2-when .wd2-card { max-width: none; width: 100%; box-sizing: border-box; padding: 32px 24px 28px; }
+  .wd2-when .wd2-card .btn { white-space: normal; }
+}

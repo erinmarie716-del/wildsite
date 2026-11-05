@@ -81,7 +81,14 @@
         <h2>Subscribe, it’s free</h2>
         <p>Join the list and receive one article a week, give or take. Web design tips, AI tools, life hacks, learnings and more!</p>
       </div>
-      <iframe src="https://wildsite.substack.com/embed" title="Subscribe to Wildsite on Substack" loading="lazy"></iframe>
+      <form class="subscribe__form" action="https://wildsite.substack.com/api/v1/free?nojs=true" method="post" target="_blank" rel="noopener">
+        <label class="subscribe__label" for="sub-email">Your email</label>
+        <div class="subscribe__row">
+          <input id="sub-email" type="email" name="email" placeholder="Type your email…" autocomplete="email" required />
+          <button class="btn btn--orange" type="submit">Subscribe</button>
+        </div>
+        <p class="subscribe__fine">Delivered by Substack. By subscribing you agree to Substack’s <a href="https://substack.com/tos" target="_blank" rel="noopener">Terms</a> and <a href="https://substack.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+      </form>
     </div>
   </div>
 </section>
