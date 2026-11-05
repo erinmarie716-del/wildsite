@@ -1944,3 +1944,24 @@ body.wd2 { background: var(--cream); }
   .wd2-when .wd2-card { max-width: none; width: 100%; box-sizing: border-box; padding: 32px 24px 28px; }
   .wd2-when .wd2-card .btn { white-space: normal; }
 }
+
+/* Wildreamers sign-up: the form is ~600px tall, the booking-calendar min-height left a big blank gap under it */
+.booking-embed--signup iframe { min-height: 0; height: 620px; }
+@media (max-width: 800px) { .booking-embed--signup iframe { height: 640px; } }
+
+/* ======== 2026-11-05 (later): more mobile fixes ======== */
+@media (max-width: 800px) {
+  /* hero: no icons on phones, shorter; the bouquet sits under the button */
+  .hero__floats { display: none !important; }
+  .hero { background-size: auto 400px, auto 400px; }
+  .hero .wrap { padding-top: 130px; padding-bottom: 190px; }
+
+  /* menu overlay: Graphic Design sub-links are plain text, not a pill; Book a consult scrolls with the list instead of sitting on top of it */
+  .nav { padding: 150px var(--gutter) 60px; }
+  .nav.open .nav__menu, .nav .nav__menu { border: 0; border-radius: 0; background: none; box-shadow: none; }
+  .nav .btn { position: static; margin-top: auto; align-self: stretch; flex: 0 0 auto; }
+
+  /* portfolio rail: the green arrow sits below the cards instead of on their corner */
+  .rail-wrap { padding-bottom: 66px; }
+  .rail-hint { bottom: 8px; }
+}
