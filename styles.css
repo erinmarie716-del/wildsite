@@ -1968,5 +1968,12 @@ body.wd2 { background: var(--cream); }
 
 /* Wildreamers sign-up (2nd pass): the wrapper itself had min-height 700px, and GHL's script can set its own inline height, so force both */
 .booking-embed.booking-embed--signup { min-height: 0; padding: 8px 8px 4px; align-self: start; }
-.booking-embed--signup iframe { min-height: 0 !important; height: 540px !important; }
-@media (max-width: 800px) { .booking-embed--signup iframe { height: 560px !important; } }
+.booking-embed--signup iframe { min-height: 0 !important; height: 465px !important; }
+@media (max-width: 800px) { .booking-embed--signup iframe { height: 480px !important; } }
+
+/* 2026-11-05: "Loading" note behind the GHL forms/calendar until they paint (they take a few seconds to arrive) */
+.form-embed, .booking-embed { position: relative; }
+.form-embed::before, .booking-embed::before { content: "Loading the form\2026"; position: absolute; top: 56px; left: 0; right: 0; text-align: center; font-size: 17px; color: #6b6b63; }
+.booking-embed[class*="booking-embed"]:not(.form-embed)::before { content: "Loading\2026"; }
+.form-embed.is-loaded::before, .booking-embed.is-loaded::before { display: none; }
+.form-embed iframe, .booking-embed iframe { position: relative; z-index: 1; }
