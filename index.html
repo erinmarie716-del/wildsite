@@ -989,5 +989,6 @@
 (function(){var v=document.querySelector('video[data-play-on-view]');if(!v||!('IntersectionObserver' in window)){if(v){v.play&&v.play().catch(function(){})}return;}
 new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.currentTime=0;v.play().catch(function(){})}else{v.pause()}})},{threshold:.4}).observe(v);})();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e03b3e9374243fcbe609ace8d2d40f2"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

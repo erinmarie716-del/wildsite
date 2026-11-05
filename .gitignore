@@ -1,0 +1,28 @@
+# Wildsite — things that must not be published
+_previous/
+_drafts/
+_figma-import/
+assets/blog/_source.zip
+
+# Flower Art source files (the site uses the .webp versions)
+assets/flower-art/*.png
+assets/flower-art/*.jpg
+assets/flower-art/*.jpeg
+
+# Mac / editor junk
+.DS_Store
+Thumbs.db
+
+# TEST PHASE ONLY — remove this line when it's time to point wildsite.co at GitHub
+
+# Retired originals (converted to .webp on Nov 4) — keep out of the repo
+assets/case-studies/tovani/testimonial.png
+assets/case-studies/heidi/therapy-watercolor.png
+assets/case-studies/heidi/coastal-landscape.png
+assets/case-studies/heidi/beach-quote.png
+assets/aliotos-focacceria.png
+assets/case-studies/heidi/ocean-waves.png
+assets/hero-watercolor.png
+assets/case-studies/roseandlily/arrangement-peonies.png
+assets/erin-gratitude-letter.png
+assets/rose-lily2.png
