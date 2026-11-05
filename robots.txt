@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /_drafts/
+Disallow: /_previous/
+Disallow: /_figma-import/
+
+Sitemap: https://wildsite.co/sitemap.xml
