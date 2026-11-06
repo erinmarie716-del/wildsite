@@ -145,6 +145,7 @@ p:last-child { margin-bottom: 0; }
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 20' preserveAspectRatio='none'%3E%3Cpath d='M4 14 C 100 8, 250 6, 396 11' fill='none' stroke='%23e78550' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
 }
 .hero p { max-width: 640px; font-size: 19px; margin-bottom: 36px; }
+.hero-br-mobile { display: none; }
 
 /* ---------- Marquee band ---------- */
 .marquee {
@@ -1952,6 +1953,8 @@ body.wd2 { background: var(--cream); }
 /* ======== 2026-11-05 (later): more mobile fixes ======== */
 @media (max-width: 800px) {
   /* hero: no icons on phones, shorter; the bouquet sits under the button */
+  .hero-br-mobile { display: block; }
+  .hero-br-desktop { display: none; }
   .hero__floats { display: none !important; }
   .hero { background-size: auto 400px, auto 400px; }
   .hero .wrap { padding-top: 130px; padding-bottom: 190px; }
