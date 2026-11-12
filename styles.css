@@ -1980,3 +1980,45 @@ body.wd2 { background: var(--cream); }
 .booking-embed[class*="booking-embed"]:not(.form-embed)::before { content: "Loading\2026"; }
 .form-embed.is-loaded::before, .booking-embed.is-loaded::before { display: none; }
 .form-embed iframe, .booking-embed iframe { position: relative; z-index: 1; }
+
+/* ======== 2026-11-12: mobile fixes (phone requests) ======== */
+/* Default (desktop) state for the condensed mobile version of the Creative Director note */
+.note__eyebrow-short, .note__more--mobile { display: none; }
+
+@media (max-width: 800px) {
+  /* 2. Homepage "Schedule a free website consult" banner: left-align (it was inheriting
+     text-align:center from the ancestor .process section) */
+  .consult { text-align: left; }
+
+  /* 3. Simple & Premium package cards: light gray border, same weight/radius as the
+     Standard card's border (which stays orange) */
+  .tier:not(.tier--featured) { border: 1.5px solid rgba(26,26,26,.14); }
+
+  /* 4. Tighten the gap between the last testimonial (Sally) and the More from Wildsite
+     section below it (the 130px .more top padding was sized for desktop) */
+  .testimonials { padding-bottom: 30px; }
+  .more { padding-top: 40px; }
+
+  /* 5. Shortened "note from the Creative Director": condensed eyebrow, drop the second
+     bio line + the "who" line, and swap the Book-a-consult button for a link to About */
+  .note__eyebrow-full { display: none; }
+  .note__eyebrow-short { display: block; }
+  .note__bio--extra, .note__who { display: none; }
+  .about--note .note__more--full { display: none; }
+  .about--note .note__more--mobile { display: flex; justify-content: center; }
+}
+
+/* ======== 2026-11-12: sticky mobile "Book a consult" bar (her call, phone chat) ======== */
+.mobile-sticky-cta { display: none; }
+@media (max-width: 800px) {
+  body.has-sticky-cta { padding-bottom: 82px; }
+  .mobile-sticky-cta {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
+    background: var(--white); padding: 12px var(--gutter);
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    box-shadow: 0 -6px 20px rgba(26,26,26,.1);
+  }
+  .mobile-sticky-cta .btn { margin: 0; }
+  /* the open mobile menu already has its own "Book a consult" button; hide this bar underneath it so there aren't two */
+  body:has(.nav.open) .mobile-sticky-cta { display: none; }
+}

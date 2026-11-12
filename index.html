@@ -195,7 +195,7 @@
 <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin />
 <link rel="preconnect" href="https://link.msgsndr.com" crossorigin />
 </head>
-<body>
+<body class="has-sticky-cta">
 
 <!-- Icon sprite (Material Symbols, Apache 2.0; social icons from the existing site) -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -548,17 +548,21 @@
     <div class="note">
       <img class="note__photo" src="assets/erin-marie-profile.webp" alt="Erin-Marie Driscoll, website designer" />
       <div class="note__text">
-        <p class="eyebrow eyebrow--green">A note from the Creative Director</p>
+        <p class="eyebrow eyebrow--green note__eyebrow-full">A note from the Creative Director</p>
+        <p class="eyebrow eyebrow--green note__eyebrow-short">Creative Director</p>
         <p class="note__quote">It’s my passion to create a website that is <em>authentic</em> to your brand and speaks to the customers you serve.</p>
         <p class="note__bio">I enjoy the discovery period, getting to know you and your business goals. I love white space, balance, artistic details, and visuals that ‘pop’!</p>
-        <p class="note__bio">For a little bit about me … I have 15 years working in corporate tech, three years working with small businesses, and two fun, rambunctious boys who keep me busy in Marin County, California!</p>
+        <p class="note__bio note__bio--extra">For a little bit about me … I have 15 years working in corporate tech, three years working with small businesses, and two fun, rambunctious boys who keep me busy in Marin County, California!</p>
         <p class="note__who"><strong>Erin-Marie</strong> &middot; Creative Director</p>
-        <p class="note__more">
+        <p class="note__more note__more--full">
           <a class="btn" href="book-a-consult.html">Book a free consult</a>
           <span class="socials">
             <a href="https://www.linkedin.com/in/erinmarie716/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
             <a href="https://instagram.com/wildsite.co" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
           </span>
+        </p>
+        <p class="note__more note__more--mobile">
+          <a class="btn" href="about.html">More about me</a>
         </p>
       </div>
     </div>
@@ -1007,5 +1011,7 @@ document.querySelectorAll('.form-embed iframe, .booking-embed iframe').forEach(f
   f.addEventListener('load', function () { f.parentNode.classList.add('is-loaded'); });
 });
 </script>
+
+<div class="mobile-sticky-cta"><a class="btn btn--wide" href="book-a-consult.html">Book a consult</a></div>
 </body>
 </html>
