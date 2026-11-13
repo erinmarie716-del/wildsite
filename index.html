@@ -358,7 +358,7 @@
     <p class="eyebrow eyebrow--green">Integrating AI into your website</p>
     <h2>Is your website <em>wildly</em> integrated with AI?</h2>
     <div class="ai__video">
-      <video muted loop playsinline preload="metadata" poster="assets/wildflowers-poster.jpg" aria-hidden="true" data-play-on-view>
+      <video autoplay muted loop playsinline preload="auto" poster="assets/wildflowers-poster.jpg" aria-hidden="true" data-play-on-view>
         <source src="assets/wildflowers-animation.mp4" type="video/mp4" />
       </video>
     </div>
@@ -554,15 +554,12 @@
         <p class="note__bio">I enjoy the discovery period, getting to know you and your business goals. I love white space, balance, artistic details, and visuals that ‘pop’!</p>
         <p class="note__bio note__bio--extra">For a little bit about me … I have 15 years working in corporate tech, three years working with small businesses, and two fun, rambunctious boys who keep me busy in Marin County, California!</p>
         <p class="note__who"><strong>Erin-Marie</strong> &middot; Creative Director</p>
-        <p class="note__more note__more--full">
+        <p class="note__more">
           <a class="btn" href="book-a-consult.html">Book a free consult</a>
           <span class="socials">
             <a href="https://www.linkedin.com/in/erinmarie716/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
             <a href="https://instagram.com/wildsite.co" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
           </span>
-        </p>
-        <p class="note__more note__more--mobile">
-          <a class="btn" href="about.html">More about me</a>
         </p>
       </div>
     </div>
@@ -1002,7 +999,7 @@
 <script>
 // Play the AI flowers video from the start each time it scrolls into view
 (function(){var v=document.querySelector('video[data-play-on-view]');if(!v||!('IntersectionObserver' in window)){if(v){v.play&&v.play().catch(function(){})}return;}
-new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.currentTime=0;v.play().catch(function(){})}else{v.pause()}})},{threshold:.4}).observe(v);})();
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(v.readyState<2){v.load();}v.currentTime=0;v.play().catch(function(){})}else{v.pause()}})},{threshold:.2}).observe(v);})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e03b3e9374243fcbe609ace8d2d40f2"}'></script><!-- End Cloudflare Web Analytics -->
 <script>

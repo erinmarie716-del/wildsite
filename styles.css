@@ -758,7 +758,7 @@ body.v2 .site-header.scrolled .logo img { width: 190px; }
 .note__more .socials { display: inline-flex; gap: 10px; margin: 0; }
 .note__more .socials a { width: 36px; height: 36px; border-radius: 999px; background: var(--black); }
 .note__more .socials svg { width: 20px; height: 20px; fill: var(--white); }
-@media (max-width: 700px) { .note { grid-template-columns: 1fr; text-align: center; justify-items: center; } .note__more { justify-content: center; flex-wrap: wrap; } }
+@media (max-width: 700px) { .about--note .note { grid-template-columns: 1fr; text-align: center; justify-items: center; } .note__more { justify-content: center; flex-wrap: wrap; } }
 
 
 /* ---------- Wildreamers page, matched to the live wildsite.co/wildreamers layout (Nov 1 2026) ---------- */
@@ -1983,7 +1983,7 @@ body.wd2 { background: var(--cream); }
 
 /* ======== 2026-11-12: mobile fixes (phone requests) ======== */
 /* Default (desktop) state for the condensed mobile version of the Creative Director note */
-.note__eyebrow-short, .note__more--mobile { display: none; }
+.note__eyebrow-short { display: none; }
 
 @media (max-width: 800px) {
   /* 2. Homepage "Schedule a free website consult" banner: left-align (it was inheriting
@@ -2000,12 +2000,11 @@ body.wd2 { background: var(--cream); }
   .more { padding-top: 40px; }
 
   /* 5. Shortened "note from the Creative Director": condensed eyebrow, drop the second
-     bio line + the "who" line, and swap the Book-a-consult button for a link to About */
+     bio line + the "who" line. Keeps the original "Book a free consult" button (her call,
+     Nov 12 phone chat: no "More about me" button here after all). */
   .note__eyebrow-full { display: none; }
   .note__eyebrow-short { display: block; }
   .note__bio--extra, .note__who { display: none; }
-  .about--note .note__more--full { display: none; }
-  .about--note .note__more--mobile { display: flex; justify-content: center; }
 }
 
 /* ======== 2026-11-12: sticky mobile "Book a consult" bar (her call, phone chat) ======== */
