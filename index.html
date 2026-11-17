@@ -1001,7 +1001,7 @@
 (function(){var v=document.querySelector('video[data-play-on-view]');if(!v||!('IntersectionObserver' in window)){if(v){v.play&&v.play().catch(function(){})}return;}
 new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(v.readyState<2){v.load();}v.currentTime=0;v.play().catch(function(){})}else{v.pause()}})},{threshold:.2}).observe(v);})();
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e03b3e9374243fcbe609ace8d2d40f2"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-0EJ8R7C4QZ"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0EJ8R7C4QZ');</script><!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e03b3e9374243fcbe609ace8d2d40f2"}'></script><!-- End Cloudflare Web Analytics -->
 <script>
 /* mark each GHL embed as loaded so the "Loading" note behind it goes away */
 document.querySelectorAll('.form-embed iframe, .booking-embed iframe').forEach(function (f) {
