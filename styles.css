@@ -346,7 +346,7 @@ p:last-child { margin-bottom: 0; }
 .contact h2 { margin-bottom: 30px; }
 .contact p { max-width: 620px; margin: 0 auto 40px; font-size: 19px; }
 .contact p a { color: inherit; }
-.form-embed { max-width: 640px; margin: 0 auto; background: var(--white); border-radius: 8px; padding: 12px 0; }
+.form-embed { max-width: 640px; margin: 0 auto; background: var(--white); border: 1px solid #e8dfd0; border-radius: 8px; padding: 12px 0; overflow: hidden; }
 .form-embed iframe { width: 100%; height: 960px; border: 0; display: block; overflow: hidden; }
 
 /* ---------- Footer ---------- */
@@ -464,7 +464,7 @@ p:last-child { margin-bottom: 0; }
 .booking .lead { font-size: 18.5px; line-height: 1.6; max-width: 420px; margin: 0 0 16px; }
 .booking .note { font-size: 16px; margin: 24px 0 0; }
 .booking .note a { color: inherit; }
-.booking-embed { background: var(--white); border-radius: 8px; padding: 8px; min-height: 700px; }
+.booking-embed { background: var(--white); border: 1px solid #e8dfd0; border-radius: 8px; padding: 8px; min-height: 700px; overflow: hidden; }
 .booking-embed iframe { width: 100%; min-height: 880px; border: 0; display: block; }
 @media (max-width: 800px) { .booking .wrap { grid-template-columns: 1fr; } .booking .lead { max-width: none; } }
 
@@ -1056,7 +1056,7 @@ body { border-top: 15px solid var(--black); }
     radial-gradient(ellipse 36% 40% at 30% 92%, rgba(246,226,200,.40), transparent 70%),
     #fff;
 }
-.booking-embed { box-shadow: 0 10px 40px rgba(35,32,28,.06); }
+.booking-embed { box-shadow: none; }
 
 /* 2026-11-04: blog handle is a link; booking note paragraph must not inherit the homepage .note layout */
 .blog-handle a { color: inherit; text-decoration: none; }

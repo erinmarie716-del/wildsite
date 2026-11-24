@@ -29,14 +29,30 @@
   .masterclass-covered li { font-size: 16px; line-height: 1.5; padding: 7px 0 7px 26px; position: relative; color: var(--black); border-bottom: 1px solid #e8dfd0; }
   .masterclass-covered li:last-child { border-bottom: none; }
   .masterclass-covered li::before { content: ""; position: absolute; left: 0; top: 16px; width: 9px; height: 9px; border-radius: 999px; background: var(--orange); }
-  .masterclass-phase { margin: 0 0 22px; }
-  .masterclass-phase:last-of-type { margin-bottom: 0; }
-  .masterclass-phase__title { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--green); margin: 0 0 6px; }
-  .masterclass-phase ul { margin: 0; }
-  .masterclass-form-col { margin-top: clamp(110px, 13vw, 150px); }
-  .masterclass-form-col .note { margin-top: 20px; }
-  .masterclass-form-col .booking-portrait { margin-top: 16px; }
-  @media (max-width: 800px) { .masterclass-form-col { margin-top: 0; } }
+  .masterclass-phase { border-top: 1px solid #e8dfd0; }
+  .masterclass-phase:last-of-type { border-bottom: 1px solid #e8dfd0; }
+  .masterclass-phase__title { list-style: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 16px; padding: 16px 0; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--green); margin: 0; }
+  .masterclass-phase__title::-webkit-details-marker { display: none; }
+  .masterclass-phase__title::after { content: "+"; color: var(--orange); font-size: 22px; font-weight: 300; line-height: 1; flex: none; transition: transform .2s; }
+  .masterclass-phase[open] .masterclass-phase__title::after { transform: rotate(45deg); }
+  .masterclass-phase ul { margin: 0; padding-bottom: 18px; }
+  .masterclass-when { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 0; padding: 10px 16px; border: 1px solid #e8dfd0; border-radius: 999px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--black); background: #fff; }
+  .masterclass-when svg { width: 18px; height: 18px; flex: none; fill: var(--orange); }
+  .booking { background: var(--white); }
+  .booking .wrap { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; text-align: center; padding: 0 20px; }
+  .booking h1 { max-width: 520px; margin-left: auto; margin-right: auto; }
+  .booking h1::after { margin-left: auto; margin-right: auto; }
+  .booking .lead { margin-left: auto; margin-right: auto; }
+  .masterclass-when { flex-wrap: wrap; justify-content: center; text-align: center; margin-left: auto; margin-right: auto; }
+  .masterclass-covered { text-align: center; margin-left: auto; margin-right: auto; }
+  .masterclass-covered li { padding-left: 0; }
+  .masterclass-covered li::before { display: none; }
+  .masterclass-form-col { margin-top: 8px; max-width: 100%; margin-left: auto; margin-right: auto; }
+  .masterclass-form-col .booking-embed { background: none; border: 1px solid #e8dfd0; border-radius: 8px; padding: 6px; box-shadow: none; min-height: 0; overflow: hidden; }
+  .masterclass-form-col .booking-embed iframe { height: 440px !important; }
+  .masterclass-form-col .note { margin-top: 20px; text-align: center; }
+  .masterclass-form-col .booking-portrait { margin: 16px auto 0; }
+  @media (max-width: 600px) { .booking .wrap { padding: 0 16px; } .masterclass-when { font-size: 14px; padding: 8px 12px; } }
 </style>
 </head>
 <body class="has-sticky-cta">
@@ -89,10 +105,11 @@
       <h1>How to Create Your Own Website with Claude</h1>
       <p class="lead">Join Erin-Marie for a live masterclass on building your own Claude website &mdash; from first idea to a live, working site.</p>
       <p class="lead">She will give you an overview of the process and the tech required. She will break down the complicated process into three phases: Design, Pipe and Plumbing, and Domain and Hosting.</p>
+      <p class="masterclass-when"><svg aria-hidden="true"><use href="#i-calendar"/></svg>Wednesday, December 2 &middot; 12:00&ndash;1:30pm PST</p>
       <div class="masterclass-covered">
-        <p class="eyebrow eyebrow--orange">Topics briefed during the masterclass:</p>
-        <div class="masterclass-phase">
-          <p class="masterclass-phase__title">Design and Content</p>
+        <p class="eyebrow eyebrow--orange">Topics Briefed</p>
+        <details class="masterclass-phase">
+          <summary class="masterclass-phase__title">Design and Content</summary>
           <ul>
             <li>Design fundamentals</li>
             <li>Brand strategy</li>
@@ -102,23 +119,23 @@
             <li>Mobile customizations</li>
             <li>Accessibility</li>
           </ul>
-        </div>
-        <div class="masterclass-phase">
-          <p class="masterclass-phase__title">Pipes and Plumbing</p>
+        </details>
+        <details class="masterclass-phase">
+          <summary class="masterclass-phase__title">Pipes and Plumbing</summary>
           <ul>
             <li>The pipes: forms, payments, funnels, and more</li>
             <li>SEO and AI search (GEO)</li>
             <li>Redirects</li>
             <li>Analytics</li>
           </ul>
-        </div>
-        <div class="masterclass-phase">
-          <p class="masterclass-phase__title">Domain and Hosting</p>
+        </details>
+        <details class="masterclass-phase">
+          <summary class="masterclass-phase__title">Domain and Hosting</summary>
           <ul>
             <li>Hosting and domain</li>
             <li>Testing and launch</li>
           </ul>
-        </div>
+        </details>
       </div>
     </div>
     <div class="masterclass-form-col">
